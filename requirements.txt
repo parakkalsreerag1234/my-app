@@ -2,4 +2,4 @@ python>=3.9
 streamlit
 folium
 streamlit-folium
-request
+
