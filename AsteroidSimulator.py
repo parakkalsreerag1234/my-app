@@ -3,8 +3,9 @@ import folium
 from streamlit_folium import st_folium
 import math
 import random
+import requests
 
-st.set_page_config(page_title="Odyssey Asteroid-Simulator", layout="wide", page_icon="")
+st.set_page_config(page_title="Odyssey Asteroid-Simulator", layout="wide", page_icon="🌠")
 st.title("Odyssey Asteroid-Simulator")
 st.write("Simulate and visualize asteroid impacts on Earth using adjustable parameters.")
 
@@ -15,7 +16,7 @@ m = folium.Map(location=[20,0],zoom_start=2)
 st_data = st_folium(m, width=450, height=350)
 
 location=None
-if st_data and st_data['last_clicked']:  
+if st_data and st_data.get('last_clicked'):  
     location = st_data['last_clicked']
     st.write("**Selected Location:**",location)
 
@@ -55,7 +56,6 @@ st.subheader("Defend Earth")
 defend=st.radio("Do you want to defend earth",["Yes","No"])
 if defend=="Yes":    
     strategy=st.selectbox("Choose your mitigation strategy",["Kinetic Impactor","Gravity Tractor"])
-       
 calculate = st.button("🚀 Calculate Impact")
 
 #nasa api part
