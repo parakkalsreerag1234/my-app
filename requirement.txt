@@ -2,4 +2,3 @@ python>=3.9
 streamlit>=1.20
 folium>=0.14
 streamlit-folium>=0.12
-
