@@ -3,7 +3,6 @@ import folium
 from streamlit_folium import st_folium
 import math
 import random
-from datetime import date
 
 st.set_page_config(page_title="Odyssey Asteroid-Simulator", layout="wide", page_icon="☄️")
 st.title("Odyssey Asteroid-Simulator")
